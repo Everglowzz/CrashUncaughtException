@@ -1,5 +1,5 @@
 # CrashUncaughtException
-## 1.Add it in your root build.gradle at the end of repositories:
+### 1.Add it in your root build.gradle at the end of repositories:
 	allprojects {
 		repositories {
 			...
@@ -7,14 +7,21 @@
 		}
 	}
 
-## 2.Add the dependency
+### 2.Add the dependency
 
      dependencies {
   	        compile 'com.github.Everglowzz:CrashUncaughtException:4.0.0'
 	  }
 	  
-## 3.save path is "/sdcard/crash/" or "/crash/"
+### 3.log save path is "/sdcard/crash/" or "/crash/"
 
-## 4. permission , attention android 6.0 + 
+         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                path = "/sdcard/crash/";
+            } else {
+                path = "/crash/";
+            }
+
+### 4. permission , attention android 6.0 + 
   
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    
